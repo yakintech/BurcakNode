@@ -3,7 +3,7 @@ var server = require('http').Server(app);
 var io = require('socket.io')(server);
 var conf = require('./config');
 var md5 = require('md5');
-// const PORT = process.env.PORT || 5000
+ const PORT = process.env.PORT || 5000
 
 const Pool = require('pg').Pool
 const db = new Pool({
@@ -24,7 +24,7 @@ app.get('/', function (req, res) {
 
 io.set('origins', '*:*');
 
-server.listen(3001, function () {
+server.listen(PORT, function () {
     console.log('listening on *:3001');
 });
 
