@@ -1,8 +1,9 @@
 var app = require('express')();
-var server = require('https').Server(app);
+var server = require('http').Server(app);
 var io = require('socket.io')(server);
 var conf = require('./config');
 var md5 = require('md5');
+// const PORT = process.env.PORT || 5000
 
 const Pool = require('pg').Pool
 const db = new Pool({
@@ -14,11 +15,19 @@ const db = new Pool({
     ssl:conf.sql.ssl
 });
 
+app.get('/', function (req, res) {
+    res.sendfile(__dirname + '/index.html');
+  });
+
+
+
+
 io.set('origins', '*:*');
 
 server.listen(3001, function () {
     console.log('listening on *:3001');
 });
+
 var x;
 var tutar;
 io.on('connection', function (socket) {
