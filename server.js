@@ -1,5 +1,5 @@
 var app = require('express')();
-var server = require('http').Server(app);
+var server = require('https').Server(app);
 var io = require('socket.io')(server);
 var conf = require('./config');
 var md5 = require('md5');
