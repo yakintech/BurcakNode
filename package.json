@@ -1,0 +1,27 @@
+{
+    "name": "burcakstyla",
+    "version": "0.3.0",
+    "description": "burcak tarlası oyunu",
+    "engines": {
+      "node": "10.x"
+    },
+    "main": "server.js",
+    "scripts": {
+      "start": "node server.js",
+      "test": "node test.js"
+    },
+    "dependencies": {
+      "ejs": "^2.5.6",
+      "express": "^4.15.2"
+    },
+    "devDependencies": {
+      "request": "^2.81.0",
+      "tape": "^4.7.0"
+    },
+    "keywords": [
+      "node",
+      "heroku",
+      "express"
+    ],
+    "license": "MIT"
+  }
